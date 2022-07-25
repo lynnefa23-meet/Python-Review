@@ -9,5 +9,13 @@ def dislike (youtube_video):
 	if "dislikes" in youtube_video:
 		youtube_video["dislikes"]+=1
 
-def add_comment (youtube_video, username, comment_text):
-	
+def add_comment(youtube_video, username, comment_text):
+					youtube_video["comments"][username] = comment_text
+					return youtube_video
+
+					new_video = create_youtube_video("song", "good song")
+					for i in range (495):
+						new_video= like(new_video)
+						new_video = dislike(new_video)
+						new_video = add_comment(new_video, "haha" ,"lola")
+						print (new_video)
